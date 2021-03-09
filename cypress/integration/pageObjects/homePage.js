@@ -6,7 +6,7 @@ class home {
         return cy.get('#search_query_top')
     }
     searchbutton(){
-        cy.get('#searchbox > .btn').click()
+        return cy.get('#searchbox > .btn').click();
     }
     
 }

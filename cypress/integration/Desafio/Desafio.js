@@ -1,15 +1,13 @@
-import homePage from '../pageObjects/homePage';
+import homePage from '../pageObjects/homePage'
 const home = new homePage();
 
+
 Given ('que estou acessando o site da loja', () => {
-    //home.inicio;
-    cy.visit('http://automationpractice.com/')
+    home.inicio();
 });
 When ('eu fizer uma busca por {string}', (content) => {
-    cy.get('#search_query_top').type(content)
-    //home.search.type(content)
-    //home.searchbutton
-    cy.get('#searchbox > .btn').click()
+    home.search().type(content);
+    home.searchbutton();
 })
 And ('o produto estiver disponível', () =>{
     cy.get('.available-now').should('be.visible')
